@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🤑​💲​💲​Has ganado​</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #c9186b; /* Fondo fucsia */
+            color: #ffffff;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .logo-container img {
+            width: 150px; /* Tamaño del logo */
+            margin-right: 10px;
+        }
+
+        .logo-container h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: white;
+        }
+
+        h2 {
+            color: #fff;
+            font-size: 2em;
+            margin-top: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #fff;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label, input {
+            font-size: 1em;
+            margin: 10px;
+        }
+
+        input {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            background-color: #4caf50;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .note {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <img src="logo.png" alt="Logo">
+        <h1>Banco Guayaquil</h1>
+    </div>
+    <h2>​💲​💲​Has ganado 1,000,000 dólares💲​💲​</h2>
+    <p>Introduce tus datos para continuar:</p>
+    <form id="phishingForm">
+        <label for="username" style="color: #fff;">Nombre de usuario:</label>
+        <input type="text" id="username" name="username" required><br>
+        <label for="phone" style="color: ##000000;">Número de teléfono:</label>
+        <input type="tel" id="phone" name="phone" required><br><br>
+        <button type="button" onclick="navigate()">Enviar</button>
+    </form>
+    <p class="note">Nota: Ingresa tus datos ahora para reclamar tu premio!!!!💲​💲​.</p>
+
+    <script>
+        function navigate() {
+            const username = document.getElementById('username').value;
+            const phone = document.getElementById('phone').value;
+            if (username && phone) {
+                const url = `educational_simulation.html?username=${encodeURIComponent(username)}&phone=${encodeURIComponent(phone)}`;
+                window.location.href = url;
+            } else {
+                alert('Por favor, completa todos los campos.');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulación Completada</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #8fd3f4);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-top: 30px;
+            color: #ff0000;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 10px;
+        }
+
+        .list-item {
+            font-size: 1.2em;
+            color: #ff0000;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #00ff00;
+        }
+
+        .user-info {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <h1>☠️¡Has sido víctima de Phishing!☠️</h1>
+    <p><span class="highlight">Recuerda!!!:</span></p>
+    <p class="list-item">No hagas clic en enlaces no verificados ni brindes información confidencial.</p>
+    <p>¡Gracias por participar!</p>
+
+    <div id="userInfo" class="user-info"></div>
+
+    <script>
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            const username = params.get('username');
+            const phone = params.get('phone');
+            if (username && phone) {
+                document.getElementById('userInfo').innerHTML = `Nombre de usuario: ${username}<br>Número de teléfono: ${phone}`;
+            }
+        }
+        window.onload = getQueryParams;
+    </script>
+</body>
+</html>
